@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/domain/entities/message.dart';
 
 class MyMessageBubble extends StatelessWidget {
-  const MyMessageBubble({Key? key}) : super(key: key);
+  final Message message;
+  const MyMessageBubble({Key? key, required this.message}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class MyMessageBubble extends StatelessWidget {
               vertical: 10
             ),
             child: Text(
-              'Hola Mundo',
+              message.text,
               style: TextStyle(color: Colors.white),
             ),
           ),
